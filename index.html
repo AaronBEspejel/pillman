@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Pac-Man Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Pac-Man</title>
     <style>
+        /* Estilos básicos */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
         #gameCanvas {
-            border: 1px solid black;
-            display: block;
-            margin: 0 auto;
+            border: 2px solid white;
             background-color: black;
         }
         .control-buttons {
@@ -23,13 +33,13 @@
     </style>
 </head>
 <body>
-    <canvas id="gameCanvas" width="600" height="600"></canvas>
+    <canvas id="gameCanvas" width="550" height="550"></canvas>
     <div class="control-buttons">
         <button id="leftBtn">&larr;</button>
         <button id="upBtn">&uarr;</button>
         <button id="downBtn">&darr;</button>
         <button id="rightBtn">&rarr;</button>
     </div>
-    <script src="path-to-your-script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
