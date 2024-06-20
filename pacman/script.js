@@ -20,10 +20,10 @@ let score = 0;
 // Generar obstáculos aleatorios
 function generateObstacles(count) {
     obstacles = [];
-    const safeZone = 4; // Define una zona de seguridad alrededor de Pac-Man
+    const safeZone = 4; // Define una zona de seguridad alrededor de Pill-Man
     for (let i = 0; i < count; i++) {
         let obstacle;
-        let obstacleSize = Math.floor(Math.random() * 5) + 1; // Tamaño del obstáculo (1x1 a 5x5)
+        let obstacleSize = Math.floor(Math.random() * 5) + 1; // Tamaño del obstáculo
         do {
             obstacle = {
                 x: Math.floor(Math.random() * tileCount),
@@ -85,7 +85,7 @@ function drawPoints() {
     });
 }
 
-// Dibujar Pac-Man
+// Dibujar Pill-Man
 function drawPacman() {
     ctx.fillStyle = '#fece46';
     ctx.beginPath();
@@ -94,7 +94,7 @@ function drawPacman() {
     ctx.fill();
 }
 
-// Dibujar puntuación
+// Tablero puntuación
 function drawScore() {
     ctx.fillStyle = '#ffffff';
     ctx.font = '20px Arial';
@@ -107,7 +107,7 @@ function clearCanvas() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
-// Comprobar colisión con obstáculos
+// Comprobar impacto con obstáculos
 function checkCollision() {
     if (obstacles.some(obstacle => 
         pacman.x >= obstacle.x &&
@@ -121,7 +121,7 @@ function checkCollision() {
     }
 }
 
-// Comprobar colisión con puntos
+// Comprobar impacto con puntos
 function checkPointCollection() {
     points = points.filter(point => {
         if (pacman.x === point.x && pacman.y === point.y) {
@@ -139,7 +139,7 @@ function checkPointCollection() {
     }
 }
 
-// Actualizar juego
+// Juego Nuevo
 function updateGame() {
     if (!gameRunning) return;
 
@@ -186,7 +186,7 @@ function startGame() {
     gameRunning = true;
     score = 0;
     generateObstacles(15); // Generar 15 obstáculos aleatorios
-    generatePoints(10); // Generar 10 puntos aleatorios
+    generatePoints(20); // Generar 20 puntos aleatorios
     setInterval(gameLoop, 300); // Velocidad del juego en milisegundos (mayor valor = juego más lento)
 }
 
