@@ -20,7 +20,7 @@ let score = 0;
 // Generar obstáculos aleatorios
 function generateObstacles(count) {
     obstacles = [];
-    const safeZone = 6; // Define una zona de seguridad alrededor de Pill-Man
+    const safeZone = 4; // Define una zona de seguridad alrededor de Pill-Man
     for (let i = 0; i < count; i++) {
         let obstacle;
         let obstacleSize = Math.floor(Math.random() * 5) + 1; // Tamaño del obstáculo
@@ -192,7 +192,7 @@ function startGame() {
 
 // Guardar el puntaje en Google Sheets
 function saveScore(score) {
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxoNPJJIXRKpVn6PGVfOTqyBwMcD3tzIf5MX6jyJbg8RPKivPgV47sZcGiZx8v2HME/exec'; // Reemplaza con tu script ID
+    const scriptURL = 'https://script.google.com/macros/s/1lLW-M5Jws3meqipgMDova_fB-EWcuuPVQiE8UweQIXE/exec'; // Reemplaza con tu script ID
     const formData = new FormData();
     formData.append('score', score);
 
@@ -229,6 +229,35 @@ document.addEventListener('keydown', event => {
                 pacman.dy = 0;
             }
             break;
+    }
+});
+
+// Eventos de botones
+document.getElementById('upBtn').addEventListener('click', () => {
+    if (pacman.dy === 0) {
+        pacman.dx = 0;
+        pacman.dy = -1;
+    }
+});
+
+document.getElementById('downBtn').addEventListener('click', () => {
+    if (pacman.dy === 0) {
+        pacman.dx = 0;
+        pacman.dy = 1;
+    }
+});
+
+document.getElementById('leftBtn').addEventListener('click', () => {
+    if (pacman.dx === 0) {
+        pacman.dx = -1;
+        pacman.dy = 0;
+    }
+});
+
+document.getElementById('rightBtn').addEventListener('click', () => {
+    if (pacman.dx === 0) {
+        pacman.dx = 1;
+        pacman.dy = 0;
     }
 });
 
