@@ -192,7 +192,7 @@ function startGame() {
 
 // Guardar el puntaje en Google Sheets
 function saveScore(score) {
-    const scriptURL = 'https://script.google.com/macros/s/1lLW-M5Jws3meqipgMDova_fB-EWcuuPVQiE8UweQIXE/exec'; // Reemplaza con tu script ID
+    const scriptURL = 'https://script.google.com/macros/s/1UjeEEYgxknfZtIraBgsmpYJfFBz3jcLknz4Dg0hlwgytDRjDh_BF17R9/exec'; // Reemplaza con tu script ID
     const formData = new FormData();
     formData.append('score', score);
 
