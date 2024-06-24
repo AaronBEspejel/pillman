@@ -20,7 +20,7 @@ let score = 0;
 // Generar obstáculos aleatorios
 function generateObstacles(count) {
     obstacles = [];
-    const safeZone = 4; // Define una zona de seguridad alrededor de Pill-Man
+    const safeZone = 6; // Define una zona de seguridad alrededor de Pill-Man
     for (let i = 0; i < count; i++) {
         let obstacle;
         let obstacleSize = Math.floor(Math.random() * 5) + 1; // Tamaño del obstáculo
