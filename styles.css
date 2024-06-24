@@ -1,0 +1,15 @@
+.buttons__container {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.buttons_center{
+    justify-content: center;
+    display: flex;
+}
+
+.butttons_space_between{
+    justify-content: space-between;
+    display: flex;
+}

@@ -31,14 +31,19 @@
             margin: 2px;
         }
     </style>
+    <link href="./styles.css" rel="stylesheet"/>
 </head>
 <body>
     <canvas id="gameCanvas" width="550" height="550"></canvas>
     <div class="control-buttons">
-    <button id="leftBtn">&#8592;</button>
-    <button id="upBtn">&#8593;</button>
-    <button id="downBtn">&#8595;</button>
-    <button id="rightBtn">&#8594;</button>
+        <div class="buttons__container">
+            <div class="buttons_center"><button id="upBtn">&#8593;</button></div>
+            <div class="butttons_space_between">
+                <button id="leftBtn">&#8592;</button>
+                <button id="rightBtn">&#8594;</button>
+            </div>
+                <div class="buttons_center"><button id="downBtn">&#8595;</button></div>
+        </div>  
 </div>
     <script src="script.js"></script>
 </body>
