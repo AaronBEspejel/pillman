@@ -1,3 +1,5 @@
+import { addUser } from "./firebase";
+
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -165,6 +167,7 @@ function updateGame() {
 
 // Bucle del juego
 function gameLoop() {
+    
     if (!gameRunning) return;
 
     clearCanvas();
@@ -192,20 +195,9 @@ function startGame() {
 
 // Guardar el puntaje en Google Sheets
 function saveScore(score) {
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxoNPJJIXRKpVn6PGVfOTqyBwMcD3tzIf5MX6jyJbg8RPKivPgV47sZcGiZx8v2HME/exec'; 
-    const data = { score: score };
-
-    fetch(scriptURL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => response.json())
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message));
+    addUser(score)
 }
+
 // Eventos de teclado
 document.addEventListener('keydown', event => {
     switch (event.key) {

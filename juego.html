@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Pac-Man</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+        #gameCanvas {
+            border: 2px solid white;
+            background-color: black;
+        }
+        .control-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .control-buttons button {
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            margin: 2px;
+        }
+    </style>
+    <link href="./styles.css" rel="stylesheet"/>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script type="module" src="./firebase.js"></script>
+</head>
+<body>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div class="control-buttons">
+        <div class="buttons__container">
+            <div class="buttons_center"><button id="upBtn">&#8593;</button></div>
+            <div class="butttons_space_between">
+                <button id="leftBtn">&#8592;</button>
+                <button id="rightBtn">&#8594;</button>
+            </div>
+                <div class="buttons_center"><button id="downBtn">&#8595;</button></div>
+        </div>  
+</div>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
