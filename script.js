@@ -1,4 +1,4 @@
-import { addUser } from "./firebase";
+import { addUser } from "./firebase.js";
 
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
@@ -167,7 +167,6 @@ function updateGame() {
 
 // Bucle del juego
 function gameLoop() {
-    
     if (!gameRunning) return;
 
     clearCanvas();
